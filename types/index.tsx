@@ -5,4 +5,6 @@ export interface PortfolioProps {
   framework: string
   live: string
   github: string
+  before: string
+  after: string
 }

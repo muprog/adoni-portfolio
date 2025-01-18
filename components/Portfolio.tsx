@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -9,16 +10,21 @@ export default function Portfolio({
   framework,
   live,
   github,
+  before,
+  after,
 }: PortfolioProps) {
   return (
-    <div className='w-full flex justify-center items-center'>
-      <div>
-        <div className='w-[250px] h-[250px] relative'>
+    <div
+      className='w-full h-screen flex justify-center items-center'
+      id='portfolio'
+    >
+      <div className='sm:flex sm:w-full sm:h-screen sm:justify-start sm:items-center'>
+        <div className='w-full sm:w-[50%] sm:h-[150px] h-[250px] relative hover:opacity-75 transition-all duration-500 -z-10'>
           <Image
             src={`/image/${image}`}
             alt='car showcase'
             fill
-            className='object-contain'
+            className='object-contain rounded-3xl'
           />
         </div>
 
@@ -28,7 +34,7 @@ export default function Portfolio({
             <table className=''>
               <tbody className='flex flex-col gap-3'>
                 <tr className='w-[200px] flex gap-3'>
-                  <td className='w-[30px] relative'>
+                  <td className='w-[30px] relative -z-10'>
                     <Image
                       src={'/image/doc.png'}
                       alt='doc'
@@ -42,12 +48,12 @@ export default function Portfolio({
                   </td>
                 </tr>
                 <tr className='w-[200px] flex gap-3'>
-                  <td className='w-[30px] relative'>
+                  <td className='w-[30px] relative -z-10'>
                     <Image
                       src={'/image/framework.png'}
                       alt='frame'
                       fill
-                      className='object-contain'
+                      className='object-contain '
                     />
                   </td>
                   <td>
@@ -80,6 +86,36 @@ export default function Portfolio({
               </tbody>
             </table>
           </div>
+        </div>
+        <div className='flex flex-col gap-3'>
+          <button className='sm:block hidden'>
+            <Image
+              src='/image/up-arrow.png'
+              alt='up-arrow'
+              height={40}
+              width={40}
+              className='bg-orange-500 rounded-full p-2'
+              onClick={() =>
+                document
+                  .getElementById(`${before}`)
+                  ?.scrollIntoView({ behavior: 'smooth' })
+              }
+            />
+          </button>
+          <button className='sm:block hidden'>
+            <Image
+              src='/image/down-arrow.png'
+              alt='down-arrow'
+              height={40}
+              width={40}
+              className='bg-orange-500 rounded-full p-2'
+              onClick={() =>
+                document
+                  .getElementById(`${after}`)
+                  ?.scrollIntoView({ behavior: 'smooth' })
+              }
+            />
+          </button>
         </div>
       </div>
     </div>

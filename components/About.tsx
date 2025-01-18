@@ -2,29 +2,29 @@ import React from 'react'
 import Image from 'next/image'
 export default function About() {
   return (
-    <div className='transition-all duration-100 ease-in-out w-full md:flex md:justify-center md:items-center'>
-      <div
-        className='w-full h-screen flex justify-center items-center p-5 transition-all duration-500 ease-in-out'
-        id='about'
-      >
-        <div className='w-[80%] h-[80%] relative'>
+    <div
+      className='transition-all duration-100 ease-in-out w-full h-screen sm:flex sm:justify-center sm:items-center'
+      id='about'
+    >
+      <div className='sm:w-[50%] sm:h-screen flex justify-center items-center p-5 transition-all duration-500 ease-in-out'>
+        <div className='sm:w-[80%] sm:h-[80%] relative w-[100px] h-[100px] rounded-full'>
           <Image
             src={'/image/adoni.JPG'}
             alt='Adoniyas'
             fill
-            className='object-contain rounded-3xl'
+            className='object-left-top object-cover sm:object-contain rounded-full sm:rounded-3xl'
           />
         </div>
       </div>
 
       <div className='w-full flex flex-col justify-start'>
-        <div className='transition-all duration-100 ease-in-out w-full flex justify-center items-center md:justify-start'>
+        <div className='transition-all duration-100 ease-in-out w-full flex justify-center items-center sm:justify-start'>
           <h2 className='text-xl font-bold flex flex-col'>
             <span className='text-orange-400'>Adoniyas</span> <span>Seid</span>
           </h2>
         </div>
-        <div className='transition-all duration-100 ease-in-out w-full flex justify-center items-center md:justify-start'>
-          <ul className='list-disc list-inside text-orange-400 text-[12px]'>
+        <div className='transition-all duration-100 ease-in-out w-full flex justify-center items-center sm:justify-start'>
+          <ul className='list-disc list-inside text-orange-400 text-[12px] sm:grid sm:grid-cols-2 sm:gap-5'>
             <li className='font-semibold'>
               <span className='text-slate-400'>Age : </span>
               <span className='text-white'>24 Years</span>
@@ -38,12 +38,16 @@ export default function About() {
               <span className='text-white'>Available</span>
             </li>
             <li>
-              <span className='text-slate-400'>Language : </span>
+              <span className='text-slate-400'>Languages : </span>
               <span className='text-white'>Amharic & English</span>
             </li>
             <li>
-              <span className='text-slate-400'>Address : </span>
-              <span className='text-white'>Addis Ababa</span>
+              <span className='text-slate-400'>Education : </span>
+              <span className='text-white'>Bachelor of Computer Science.</span>
+            </li>
+            <li>
+              <span className='text-slate-400'>Studied At :</span>
+              <span className='text-white'> University of Gondor</span>
             </li>
             <li>
               <span className='text-slate-400'>Phone : </span>
@@ -51,7 +55,13 @@ export default function About() {
             </li>
             <li>
               <span className='text-slate-400'>Email : </span>
-              <span className='text-white'>muprog4@gmail.com</span>
+              <span className='text-white'>
+                <a className=''>muprog4@gmail.com</a>
+              </span>
+            </li>
+            <li>
+              <span className='text-slate-400'>Address : </span>
+              <span className='text-white'>Addis Ababa, Ethiopia</span>
             </li>
           </ul>
         </div>

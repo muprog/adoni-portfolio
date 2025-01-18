@@ -1,3 +1,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.header-ul hr {
+  @apply opacity-5;
+}
+.header-li {
+  @apply w-[90%] rounded-xl pl-2 pb-1 border-orange-500;
+}
+
+.scrollbar-hide {
+  @apply overflow-auto; /* Ensure scrolling functionality */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* WebKit Browsers */
+}
+
+.page {
+  @apply sm:flex sm:w-full sm:h-screen sm:overflow-hidden scrollbar-hide overflow-hidden;
+}
+
+.header-ul1 li {
+  @apply hover:font-semibold transition-all duration-100;
+}
+.page-div {
+  @apply sm:w-full sm:h-screen sm:flex-shrink-0;
+}
+.skill-div {
+  @apply w-[150px] h-[150px] bg-slate-900 text-center content-center rounded-xl hover:opacity-75 transition-opacity duration-100;
+}
