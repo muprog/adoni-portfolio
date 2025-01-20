@@ -37,5 +37,8 @@ module.exports = {
       },
     },
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   plugins: [require('tailwindcss-textshadow')],
 }

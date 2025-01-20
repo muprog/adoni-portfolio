@@ -5,7 +5,7 @@ export default function Skill() {
     <div className='w-full h-screen flex flex-col justify-center items-center'>
       <h1 className='text-[30px] font-semibold underline'>Skills</h1>
       <div
-        className='w-full h-screen pt-12 pl-10 flex flex-col gap-5 justify-center items-center sm:grid sm:grid-cols-3 sm:gap-0'
+        className='w-full h-screen pt-12 pl-10 flex flex-col gap-5 justify-center items-center'
         id='skill'
       >
         <div className='skill-div'>HTML</div>
