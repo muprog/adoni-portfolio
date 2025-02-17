@@ -7,4 +7,5 @@ export interface PortfolioProps {
   github: string
   before: string
   after: string
+  currentIndex: number
 }

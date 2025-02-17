@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'Adoniyas',
@@ -14,9 +15,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className='bg-slate-950 text-white'>
+      <body className=' text-white bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900'>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   )
