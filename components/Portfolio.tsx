@@ -285,8 +285,8 @@ export default function Portfolio({
   github,
   before,
   after,
-  currentIndex,
-}: PortfolioProps) {
+}: // currentIndex,
+PortfolioProps) {
   const [isBouncing, setIsBouncing] = useState(false)
 
   const handleBounceEffect = () => {
