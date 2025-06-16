@@ -1,79 +1,50 @@
 'use client'
 import React, { useEffect, useState } from 'react'
-import Image from 'next/image'
+import { motion } from 'framer-motion'
+
 export default function Home() {
   const [isAnimating, setIsAnimating] = useState(true)
+  const [isMounted, setIsMounted] = useState(false)
 
   useEffect(() => {
-    // Stop the animation after it's completed
-    const timer = setTimeout(() => setIsAnimating(false), 1000) // Match duration with animation time
+    setIsMounted(true)
+    const timer = setTimeout(() => setIsAnimating(false), 1000)
     return () => clearTimeout(timer)
   }, [])
 
+  if (!isMounted) {
+    return null
+  }
+
   return (
-    <div className='flex items-center justify-center h-screen'>
+    <div className='flex items-center justify-center min-h-screen bg-gradient-to-b from-gray-900 to-black'>
       <div
         className={`${
           isAnimating ? 'animate-openFromCenter' : ''
-        }  shadow-lg text-center  overflow-hidden max-w-3xl transition-all duration-1000 w-full h-screen`}
+        } w-full max-w-6xl px-4`}
       >
         <div
           id='home'
-          className={`transition-all duration-500 ease-in-out w-full h-screen flex justify-center items-center flex-col gap-10 sm:flex-row sm:gap-40 pt-10 pl-10`}
+          className='min-h-screen flex flex-col justify-center items-center gap-8 py-20'
         >
-          <div className='transition-all duration-500 ease-in-out text-[25px]  w-[150px] sm:w-[300px] font-bold sm:text-[50px]  sm:font-bold flex flex-col  items-center'>
-            <div>
-              <h1 className='text-shadow-lg tracking-widest'>
-                Hello<span className='text-orange-400 font-bold'>.</span>
-              </h1>
-            </div>
-            <div className='text-shadow-lg tracking-widest transition-all duration-500'>
-              <h1 className='w-full flex flex-row flex-1 items-center'>
-                <span className='sm:w-[150px]'>
-                  I am <span className='sm:hidden'>A</span>
-                </span>
-                <span className='transition-all duration-500 ease-in-out text-[15px] tracking-tighter hidden sm:block'>
-                  A Next js junior Developer
-                </span>
-              </h1>
-            </div>
-            <div className='text-shadow-lg tracking-widest hidden sm:block'>
-              <h1>Adoniyas</h1>
-            </div>
-            <div className='text-shadow-lg text-[12px] sm:hidden'>
-              <h1> Next js Junior Developer</h1>
-            </div>
-          </div>
-          <div>
-            <button className='sm:hidden'>
-              <Image
-                src='/image/down-arrow.png'
-                alt='down-arrow'
-                height={40}
-                width={40}
-                className='bg-orange-500 rounded-full p-2'
-                onClick={() =>
-                  document
-                    .getElementById('about')
-                    ?.scrollIntoView({ behavior: 'smooth' })
-                }
-              />
-            </button>
-            <button className='sm:block hidden'>
-              <Image
-                src='/image/right-arrow.png'
-                alt='right-arrow'
-                height={40}
-                width={40}
-                className='bg-orange-500 rounded-full p-2'
-                onClick={() =>
-                  document
-                    .getElementById('about')
-                    ?.scrollIntoView({ behavior: 'smooth' })
-                }
-              />
-            </button>
-          </div>
+          <motion.div
+            {...{
+              initial: { opacity: 0, y: 20 },
+              animate: { opacity: 1, y: 0 },
+              transition: { duration: 0.8 },
+              className: 'text-center',
+            }}
+          >
+            <h1 className='text-4xl sm:text-6xl font-bold text-white mb-4'>
+              Hello<span className='text-orange-400'>.</span>
+            </h1>
+            <h2 className='text-2xl sm:text-4xl font-semibold text-gray-300 mb-6'>
+              I&apos;m Adoniyas
+            </h2>
+            <p className='text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto'>
+              A passionate Full Stack Developer crafting modern web experiences
+            </p>
+          </motion.div>
         </div>
       </div>
     </div>

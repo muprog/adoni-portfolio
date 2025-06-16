@@ -7,7 +7,4 @@ export interface PortfolioProps {
   technologies: string[]
   live: string
   github: string
-  before: string
-  after: string
-  currentIndex: number
 }

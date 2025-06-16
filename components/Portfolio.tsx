@@ -1,415 +1,186 @@
-// 'use client'
-// import React from 'react'
-// import Image from 'next/image'
-// import Link from 'next/link'
-// import { PortfolioProps } from '@/types'
-// export default function Portfolio({
-//   image,
-//   name,
-//   project,
-//   framework,
-//   live,
-//   github,
-//   before,
-//   after,
-//   currentIndex,
-// }: PortfolioProps) {
-//   return (
-//     <div
-//       className='w-full h-screen flex justify-center items-center'
-//       id='portfolio'
-//     >
-//       <div className='sm:flex sm:w-full sm:h-screen sm:justify-start sm:items-center'>
-//         <div className='w-full sm:w-[50%] sm:h-[150px] h-[250px] relative hover:opacity-75 transition-all duration-500 -z-10'>
-//           <Image
-//             src={`/image/${image}`}
-//             alt='car showcase'
-//             fill
-//             className='object-contain rounded-3xl'
-//           />
-//         </div>
-
-//         <div>
-//           <div>
-//             <div className='text-[30px] font-bold'>{name}</div>
-//             <table className=''>
-//               <tbody className='flex flex-col gap-3'>
-//                 <tr className='w-[200px] flex gap-3'>
-//                   <td className='w-[30px] relative -z-10'>
-//                     <Image
-//                       src={'/image/doc.png'}
-//                       alt='doc'
-//                       fill
-//                       className='object-contain'
-//                     />
-//                   </td>
-//                   <td>
-//                     <span className='text-slate-400'>Project : </span>
-//                     <span>{project}</span>
-//                   </td>
-//                 </tr>
-//                 <tr className='w-[200px] flex gap-3'>
-//                   <td className='w-[30px] relative -z-10'>
-//                     <Image
-//                       src={'/image/framework.png'}
-//                       alt='frame'
-//                       fill
-//                       className='object-contain '
-//                     />
-//                   </td>
-//                   <td>
-//                     <span className='text-slate-400'>Framework : </span>
-//                     <span>{framework}</span>
-//                   </td>
-//                 </tr>
-//                 <tr className='w-[200px] flex gap-3'>
-//                   <td className='w-full'>
-//                     <button className=' group p-1 bg-slate-600 w-full rounded-full hover:bg-orange-400 text-[14px] font-semibold transition-all duration-500'>
-//                       <Link
-//                         href={`${live}`}
-//                         className='w-full h-full group-hover:underline'
-//                       >
-//                         Live
-//                       </Link>
-//                     </button>
-//                   </td>
-//                   <td className='w-full'>
-//                     <button className=' group p-1 bg-slate-600 w-full rounded-full hover:bg-orange-400 text-[14px] font-semibold transition-all duration-500'>
-//                       <Link
-//                         href={`${github}`}
-//                         className='w-full h-full group-hover:underline'
-//                       >
-//                         Github
-//                       </Link>
-//                     </button>
-//                   </td>
-//                 </tr>
-//               </tbody>
-//             </table>
-//           </div>
-//         </div>
-//         <div className='flex flex-col gap-3'>
-//           <button className='sm:block hidden'>
-//             <Image
-//               src='/image/up-arrow.png'
-//               alt='up-arrow'
-//               height={40}
-//               width={40}
-//               className='bg-orange-500 rounded-full p-2'
-//               onClick={() =>
-//                 before === ''
-//                   ? {}
-//                   : document
-//                       .getElementById(`${before}`)
-//                       ?.scrollIntoView({ behavior: 'smooth' })
-//               }
-//             />
-//           </button>
-//           <button className='sm:block hidden'>
-//             <Image
-//               src='/image/down-arrow.png'
-//               alt='down-arrow'
-//               height={40}
-//               width={40}
-//               className='bg-orange-500 rounded-full p-2'
-//               onClick={() =>
-//                 after === ''
-//                   ? {}
-//                   : document
-//                       .getElementById(`${after}`)
-//                       ?.scrollIntoView({ behavior: 'smooth' })
-//               }
-//             />
-//           </button>
-//         </div>
-//       </div>
-//     </div>
-//   )
-// }
-
-// 'use client'
-// import React, { useState } from 'react'
-// import Image from 'next/image'
-// import Link from 'next/link'
-// import { PortfolioProps } from '@/types'
-
-// export default function Portfolio({
-//   image,
-//   name,
-//   project,
-//   framework,
-//   live,
-//   github,
-//   before,
-//   after,
-//   currentIndex,
-// }: PortfolioProps) {
-//   const [isBouncing, setIsBouncing] = useState(false)
-
-//   const handleBounceEffect = () => {
-//     if (before === '' || after === '') {
-//       setIsBouncing(true)
-//       setTimeout(() => setIsBouncing(false), 1000) // Reset bounce after 1 second
-//     }
-//   }
-
-//   return (
-//     <div
-//       className={`w-full h-screen flex justify-center items-center ${
-//         isBouncing ? 'bounce' : ''
-//       }`}
-//       id='portfolio'
-//     >
-//       <div className='sm:flex sm:w-full sm:h-screen sm:justify-start sm:items-center'>
-//         <div className='w-full sm:w-[50%] sm:h-[150px] h-[250px] relative hover:opacity-75 transition-all duration-500 -z-10'>
-//           <Image
-//             src={`/image/${image}`}
-//             alt='car showcase'
-//             fill
-//             className='object-contain rounded-3xl'
-//           />
-//         </div>
-
-//         <div>
-//           <div>
-//             <div className='text-[30px] font-bold'>{name}</div>
-//             <table className=''>
-//               <tbody className='flex flex-col gap-3'>
-//                 <tr className='w-[200px] flex gap-3'>
-//                   <td className='w-[30px] relative -z-10'>
-//                     <Image
-//                       src={'/image/doc.png'}
-//                       alt='doc'
-//                       fill
-//                       className='object-contain'
-//                     />
-//                   </td>
-//                   <td>
-//                     <span className='text-slate-400'>Project : </span>
-//                     <span>{project}</span>
-//                   </td>
-//                 </tr>
-//                 <tr className='w-[200px] flex gap-3'>
-//                   <td className='w-[30px] relative -z-10'>
-//                     <Image
-//                       src={'/image/framework.png'}
-//                       alt='frame'
-//                       fill
-//                       className='object-contain '
-//                     />
-//                   </td>
-//                   <td>
-//                     <span className='text-slate-400'>Framework : </span>
-//                     <span>{framework}</span>
-//                   </td>
-//                 </tr>
-//                 <tr className='w-[200px] flex gap-3'>
-//                   <td className='w-full'>
-//                     <button className=' group p-1 bg-slate-600 w-full rounded-full hover:bg-orange-400 text-[14px] font-semibold transition-all duration-500'>
-//                       <Link
-//                         href={`${live}`}
-//                         className='w-full h-full group-hover:underline'
-//                       >
-//                         Live
-//                       </Link>
-//                     </button>
-//                   </td>
-//                   <td className='w-full'>
-//                     <button className=' group p-1 bg-slate-600 w-full rounded-full hover:bg-orange-400 text-[14px] font-semibold transition-all duration-500'>
-//                       <Link
-//                         href={`${github}`}
-//                         className='w-full h-full group-hover:underline'
-//                       >
-//                         Github
-//                       </Link>
-//                     </button>
-//                   </td>
-//                 </tr>
-//               </tbody>
-//             </table>
-//           </div>
-//         </div>
-//         <div className='flex flex-col gap-3'>
-//           <button className='sm:block hidden'>
-//             <Image
-//               src='/image/up-arrow.png'
-//               alt='up-arrow'
-//               height={40}
-//               width={40}
-//               className='bg-orange-500 rounded-full p-2'
-//               onClick={() => {
-//                 handleBounceEffect()
-//                 if (before !== '') {
-//                   document
-//                     .getElementById(`${before}`)
-//                     ?.scrollIntoView({ behavior: 'smooth' })
-//                 }
-//               }}
-//             />
-//           </button>
-//           <button className='sm:block hidden'>
-//             <Image
-//               src='/image/down-arrow.png'
-//               alt='down-arrow'
-//               height={40}
-//               width={40}
-//               className='bg-orange-500 rounded-full p-2'
-//               onClick={() => {
-//                 handleBounceEffect()
-//                 if (after !== '') {
-//                   document
-//                     .getElementById(`${after}`)
-//                     ?.scrollIntoView({ behavior: 'smooth' })
-//                 }
-//               }}
-//             />
-//           </button>
-//         </div>
-//       </div>
-//     </div>
-//   )
-// }
-
 'use client'
-import React, { useState } from 'react'
+import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 import { PortfolioProps } from '@/types'
+import type { HTMLMotionProps } from 'framer-motion'
 
 export default function Portfolio({
   image,
   name,
+  description,
   project,
   framework,
+  technologies,
   live,
   github,
-  before,
-  after,
-}: // currentIndex,
-PortfolioProps) {
-  const [isBouncing, setIsBouncing] = useState(false)
-
-  const handleBounceEffect = () => {
-    if (before === '' || after === '') {
-      setIsBouncing(true)
-      setTimeout(() => setIsBouncing(false), 1000) // Reset bounce after 1 second
-    }
-  }
-
+}: PortfolioProps) {
   return (
-    <div
-      className={`w-full h-[100vh] flex justify-center items-center ${
-        isBouncing ? 'bounce' : ''
-      }`}
-      id='portfolio'
+    <motion.div
+      {...({
+        initial: { opacity: 0, y: 20 },
+        whileInView: { opacity: 1, y: 0 },
+        transition: { duration: 0.5 },
+        viewport: { once: true },
+        className: 'flex flex-col lg:flex-row gap-12',
+      } as HTMLMotionProps<'div'>)}
     >
-      <div className='sm:flex sm:w-full sm:h-screen sm:justify-between sm:items-center gap-8 px-8'>
-        {/* Image Section */}
-        <div className='w-full sm:w-[50%] sm:h-[350px] h-[250px] relative rounded-xl shadow-lg overflow-hidden'>
-          <Image
-            src={`/image/${image}`}
-            alt='project showcase'
-            fill
-            className='object-cover transform transition-transform duration-500 hover:scale-105'
-          />
-        </div>
+      <motion.div
+        {...({
+          initial: { opacity: 0, scale: 0.95 },
+          whileInView: { opacity: 1, scale: 1 },
+          transition: { duration: 0.5, delay: 0.2 },
+          viewport: { once: true },
+          className:
+            'lg:w-1/2 relative h-[450px] rounded-2xl overflow-hidden group',
+        } as HTMLMotionProps<'div'>)}
+      >
+        <Image
+          src={`/image/${image}`}
+          alt={name}
+          fill
+          className='object-cover transition-transform duration-700 group-hover:scale-110'
+        />
+        <div className='absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500' />
+        <motion.div
+          {...({
+            initial: { opacity: 0, y: 20 },
+            whileInView: { opacity: 1, y: 0 },
+            transition: { duration: 0.5, delay: 0.4 },
+            viewport: { once: true },
+            className:
+              'absolute bottom-0 left-0 right-0 p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500',
+          } as HTMLMotionProps<'div'>)}
+        >
+          <h3 className='text-2xl font-bold text-white mb-2'>{name}</h3>
+          <p className='text-gray-300'>{project}</p>
+        </motion.div>
+      </motion.div>
 
-        {/* Project Details Section */}
-        <div className='flex flex-col justify-center items-center sm:items-start sm:w-[50%]'>
-          <div className='text-3xl font-semibold text-indigo-600 mb-4'>
-            {name}
-          </div>
+      {/* Project Info - Right Side */}
+      <motion.div
+        {...({
+          initial: { opacity: 0 },
+          whileInView: { opacity: 1 },
+          transition: { duration: 0.5, delay: 0.3 },
+          viewport: { once: true },
+          className: 'lg:w-1/2 flex flex-col justify-between',
+        } as HTMLMotionProps<'div'>)}
+      >
+        <div className='space-y-8'>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            viewport={{ once: true }}
+          >
+            <h3 className='text-4xl font-bold text-white mb-4 bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent'>
+              {name}
+            </h3>
+            <p className='text-gray-400 text-lg leading-relaxed'>
+              {description}
+            </p>
+          </motion.div>
 
-          <table className='text-lg'>
-            <tbody className='flex flex-col gap-4'>
-              <tr className='flex gap-4 items-center'>
-                <td className='w-[30px]'>
-                  <Image
-                    src='/image/doc.png'
-                    alt='doc'
-                    height={20}
-                    width={20}
-                    className='object-contain'
-                  />
-                </td>
-                <td className='text-gray-400 font-semibold'>
-                  Project: <span className='text-white'>{project}</span>
-                </td>
-              </tr>
-              <tr className='flex gap-4 items-center'>
-                <td className='w-[30px]'>
-                  <Image
-                    src='/image/framework.png'
-                    alt='framework'
-                    height={20}
-                    width={20}
-                    className='object-contain'
-                  />
-                </td>
-                <td className='text-gray-400 font-semibold'>
-                  Framework: <span className='text-white'>{framework}</span>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-
-          {/* Action Buttons */}
-          <div className='mt-6 flex gap-6'>
-            <button className='bg-gradient-to-r from-indigo-600 to-blue-500 hover:scale-105 p-2 rounded-full text-white transition-all duration-300'>
-              <Link href={live} className='hover:underline'>
-                Live
-              </Link>
-            </button>
-            <button className='bg-gradient-to-r from-gray-700 to-gray-600 hover:scale-105 p-2 rounded-full text-white transition-all duration-300'>
-              <Link href={github} className='hover:underline'>
-                Github
-              </Link>
-            </button>
-          </div>
-        </div>
-
-        {/* Scroll Buttons */}
-        <div className='flex flex-col gap-6 mt-8'>
-          <button
-            className='p-3 bg-orange-500 rounded-full shadow-xl transform transition-all duration-300 hover:scale-110'
-            onClick={() => {
-              handleBounceEffect()
-              if (before !== '') {
-                document
-                  .getElementById(`${before}`)
-                  ?.scrollIntoView({ behavior: 'smooth' })
-              }
+          <motion.div
+            {...{
+              initial: { opacity: 0, y: 20 },
+              whileInView: { opacity: 1, y: 0 },
+              transition: { duration: 0.5, delay: 0.5 },
+              viewport: { once: true },
+              className: 'space-y-6',
             }}
           >
-            <Image
-              src='/image/up-arrow.png'
-              alt='up-arrow'
-              height={40}
-              width={40}
-              className='object-contain'
-            />
-          </button>
-          <button
-            className='p-3 bg-orange-500 rounded-full shadow-xl transform transition-all duration-300 hover:scale-110'
-            onClick={() => {
-              handleBounceEffect()
-              if (after !== '') {
-                document
-                  .getElementById(`${after}`)
-                  ?.scrollIntoView({ behavior: 'smooth' })
-              }
-            }}
-          >
-            <Image
-              src='/image/down-arrow.png'
-              alt='down-arrow'
-              height={40}
-              width={40}
-              className='object-contain'
-            />
-          </button>
+            <div className='flex items-center gap-3'>
+              <span className='text-orange-400 font-semibold text-lg min-w-[140px]'>
+                Project Type:
+              </span>
+              <span className='text-gray-300 text-lg'>{project}</span>
+            </div>
+            <div className='flex items-center gap-3'>
+              <span className='text-orange-400 font-semibold text-lg min-w-[140px]'>
+                Framework:
+              </span>
+              <span className='text-gray-300 text-lg'>{framework}</span>
+            </div>
+            <div>
+              <span className='text-orange-400 font-semibold text-lg block mb-3'>
+                Technologies:
+              </span>
+              <div className='flex flex-wrap gap-3'>
+                {technologies.map((tech, index) => (
+                  <motion.span
+                    key={index}
+                    {...({
+                      initial: { opacity: 0, scale: 0.8 },
+                      whileInView: { opacity: 1, scale: 1 },
+                      transition: { duration: 0.3, delay: 0.1 * index },
+                      viewport: { once: true },
+                      className:
+                        'px-4 py-2 bg-gray-800/50 backdrop-blur-sm text-gray-300 rounded-full text-base border border-gray-700 hover:border-orange-500/50 transition-colors duration-300',
+                    } as HTMLMotionProps<'div'>)}
+                  >
+                    {tech}
+                  </motion.span>
+                ))}
+              </div>
+            </div>
+          </motion.div>
         </div>
-      </div>
-    </div>
+
+        {/* Buttons - Bottom */}
+        <motion.div
+          {...({
+            initial: { opacity: 0, y: 20 },
+            whileInView: { opacity: 1, y: 0 },
+            transition: { duration: 0.5, delay: 0.6 },
+            viewport: { once: true },
+            className: 'flex gap-4 mt-8',
+          } as HTMLMotionProps<'div'>)}
+        >
+          <Link
+            href={live}
+            target='_blank'
+            className='group px-8 py-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-full hover:from-orange-600 hover:to-orange-700 transition-all duration-300 text-lg font-medium flex items-center gap-2'
+          >
+            Live Demo
+            <svg
+              className='w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300'
+              fill='none'
+              stroke='currentColor'
+              viewBox='0 0 24 24'
+            >
+              <path
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                strokeWidth={2}
+                d='M14 5l7 7m0 0l-7 7m7-7H3'
+              />
+            </svg>
+          </Link>
+          <Link
+            href={github}
+            target='_blank'
+            className='group px-8 py-3 border-2 border-gray-700 text-gray-300 rounded-full hover:border-orange-500/50 hover:text-orange-400 transition-all duration-300 text-lg font-medium flex items-center gap-2'
+          >
+            View Code
+            <svg
+              className='w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300'
+              fill='none'
+              stroke='currentColor'
+              viewBox='0 0 24 24'
+            >
+              <path
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                strokeWidth={2}
+                d='M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14'
+              />
+            </svg>
+          </Link>
+        </motion.div>
+      </motion.div>
+    </motion.div>
   )
 }

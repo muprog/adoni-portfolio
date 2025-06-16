@@ -1,149 +1,167 @@
-// import React from 'react'
-// import Image from 'next/image'
-// export default function About() {
-//   return (
-//     <div
-//       className='transition-all duration-100 ease-in-out w-full h-screen sm:flex sm:justify-center sm:items-center'
-//       id='about'
-//     >
-//       <div className='sm:w-[50%] sm:h-screen flex justify-center items-center p-5 transition-all duration-500 ease-in-out'>
-//         <div className='sm:w-[80%] sm:h-[80%] relative w-[100px] h-[100px] rounded-full'>
-//           <Image
-//             src={'/image/adoni.JPG'}
-//             alt='Adoniyas'
-//             fill
-//             className='object-left-top object-cover sm:object-contain rounded-full sm:rounded-3xl'
-//           />
-//         </div>
-//       </div>
-
-//       <div className='w-full flex flex-col justify-start'>
-//         <div className='transition-all duration-100 ease-in-out w-full flex justify-center items-center sm:justify-start'>
-//           <h2 className='text-xl font-bold flex flex-col'>
-//             <span className='text-orange-400'>Adoniyas</span> <span>Seid</span>
-//           </h2>
-//         </div>
-//         <div className='transition-all duration-100 ease-in-out w-full flex justify-center items-center sm:justify-start'>
-//           <ul className='list-disc list-inside text-orange-400 text-[12px] sm:grid sm:grid-cols-2 sm:gap-5'>
-//             <li className='font-semibold'>
-//               <span className='text-slate-400'>Age : </span>
-//               <span className='text-white'>24 Years</span>
-//             </li>
-//             <li>
-//               <span className='text-slate-400'>Nationality : </span>
-//               <span className='text-white'>Ethiopian</span>
-//             </li>
-//             <li>
-//               <span className='text-slate-400'>Freelance : </span>
-//               <span className='text-white'>Available</span>
-//             </li>
-//             <li>
-//               <span className='text-slate-400'>Languages : </span>
-//               <span className='text-white'>Amharic & English</span>
-//             </li>
-//             <li>
-//               <span className='text-slate-400'>Education : </span>
-//               <span className='text-white'>Bachelor of Computer Science.</span>
-//             </li>
-//             <li>
-//               <span className='text-slate-400'>Studied At :</span>
-//               <span className='text-white'> University of Gondor</span>
-//             </li>
-//             <li>
-//               <span className='text-slate-400'>Phone : </span>
-//               <span className='text-white'>09 89 13 04 78</span>
-//             </li>
-//             <li>
-//               <span className='text-slate-400'>Email : </span>
-//               <span className='text-white'>
-//                 <a className=''>muprog4@gmail.com</a>
-//               </span>
-//             </li>
-//             <li>
-//               <span className='text-slate-400'>Address : </span>
-//               <span className='text-white'>Addis Ababa, Ethiopia</span>
-//             </li>
-//           </ul>
-//         </div>
-//       </div>
-//     </div>
-//   )
-// }
+'use client'
 
 import React from 'react'
 import Image from 'next/image'
-
+import { motion } from 'framer-motion'
+import type { HTMLMotionProps } from 'framer-motion'
 export default function About() {
   return (
     <div
-      className='transition-all duration-100 ease-in-out w-full h-screen sm:flex sm:justify-center sm:items-center bg-gray-900'
+      className='min-h-screen w-full flex flex-col sm:flex-row items-center justify-center bg-gradient-to-b from-gray-900 to-black py-20 px-4'
       id='about'
     >
-      <div className='sm:w-[50%] sm:h-screen flex justify-center items-center p-6 transition-all duration-500 ease-in-out '>
-        <div className='sm:w-[80%]  relative w-[120px] h-[120px]  sm:h-[80vh]  overflow-hidden'>
+      <motion.div
+        {...({
+          initial: { opacity: 0, x: -50 },
+          whileInView: { opacity: 1, x: 0 },
+          transition: { duration: 0.8 },
+          viewport: { once: true },
+          className: 'w-full sm:w-1/2 flex justify-center items-center p-6',
+        } as HTMLMotionProps<'div'>)}
+      >
+        <div className='relative w-[250px] h-[250px] sm:w-[400px] sm:h-[500px] overflow-hidden rounded-2xl shadow-2xl'>
           <Image
             src={'/image/adoni.JPG'}
             alt='Adoniyas'
             fill
-            className=' object-cover object-top sm:object-contain rounded-full  sm:rounded-none shadow-xl'
+            className='object-cover object-top hover:scale-105 transition-transform duration-500'
+            priority
           />
+          <div className='absolute inset-0 bg-gradient-to-t from-black/50 to-transparent' />
         </div>
-      </div>
+      </motion.div>
 
-      <div className='w-full sm:w-[50%] flex flex-col justify-center items-start p-6'>
-        <div className='transition-all duration-100 ease-in-out w-full flex justify-center items-center sm:justify-start mb-5'>
-          <h2 className='text-3xl font-bold text-white flex flex-col text-center sm:text-left'>
-            <span className='text-orange-400'>Adoniyas</span> <span>Seid</span>
+      <motion.div
+        {...({
+          initial: { opacity: 0, x: 50 },
+          whileInView: { opacity: 1, x: 0 },
+          transition: { duration: 0.8 },
+          viewport: { once: true },
+          className: 'w-full sm:w-1/2 flex flex-col justify-center p-6',
+        } as HTMLMotionProps<'div'>)}
+      >
+        <div className='mb-8'>
+          <h2 className='text-4xl sm:text-5xl font-bold text-white mb-4'>
+            About <span className='text-orange-400'>Me</span>
           </h2>
+          <p className='text-gray-400 text-lg mb-6'>
+            A passionate Full Stack developer with a strong foundation in web
+            development and a keen eye for creating beautiful, functional
+            applications.
+          </p>
         </div>
-        <div className='transition-all duration-100 ease-in-out w-full sm:justify-start'>
-          <ul className='list-disc list-inside text-orange-400 text-[14px] sm:text-lg sm:grid sm:grid-cols-2 sm:gap-5'>
-            <li className='font-semibold text-white'>
-              <span className='text-slate-400'>Age : </span>
-              <span>24 Years</span>
-            </li>
-            <li className='font-semibold text-white'>
-              <span className='text-slate-400'>Nationality : </span>
-              <span>Ethiopian</span>
-            </li>
-            <li className='font-semibold text-white'>
-              <span className='text-slate-400'>Freelance : </span>
-              <span>Available</span>
-            </li>
-            <li className='font-semibold text-white'>
-              <span className='text-slate-400'>Languages : </span>
-              <span>Amharic & English</span>
-            </li>
-            <li className='font-semibold text-white'>
-              <span className='text-slate-400'>Education : </span>
-              <span>Bachelor of Computer Science</span>
-            </li>
-            <li className='font-semibold text-white'>
-              <span className='text-slate-400'>Studied At :</span>
-              <span>University of Gondar</span>
-            </li>
-            <li className='font-semibold text-white'>
-              <span className='text-slate-400'>Phone : </span>
-              <span>09 89 13 04 78</span>
-            </li>
-            <li className='font-semibold text-white'>
-              <span className='text-slate-400'>Email : </span>
-              <span>
+
+        <div className='grid grid-cols-1 lg:grid-cols-2 gap-6'>
+          <motion.div
+            {...({
+              initial: { opacity: 0, y: 20 },
+              whileInView: { opacity: 1, y: 0 },
+              transition: { delay: 0.2 },
+              viewport: { once: true },
+              className:
+                'bg-gray-800/50 p-6 rounded-lg block sm:hidden lg:block',
+            } as HTMLMotionProps<'div'>)}
+          >
+            <h3 className='text-orange-400 font-semibold text-xl mb-4'>
+              Personal Info
+            </h3>
+            <ul className='space-y-3 text-gray-300'>
+              <li className='flex items-center gap-3'>
+                <span className='text-gray-400 min-w-[120px] text-base'>
+                  Age:
+                </span>
+                <span className='text-base font-medium'>24 Years</span>
+              </li>
+              <li className='flex items-center gap-3'>
+                <span className='text-gray-400 min-w-[120px] text-base'>
+                  Nationality:
+                </span>
+                <span className='text-base font-medium'>Ethiopian</span>
+              </li>
+              <li className='flex items-center gap-3'>
+                <span className='text-gray-400 min-w-[120px] text-base'>
+                  Languages:
+                </span>
+                <span className='text-base font-medium'>Amharic & English</span>
+              </li>
+              <li className='flex items-center gap-3'>
+                <span className='text-gray-400 min-w-[120px] text-base'>
+                  Freelance:
+                </span>
+                <span className='text-green-400 text-base font-medium'>
+                  Available
+                </span>
+              </li>
+            </ul>
+          </motion.div>
+
+          <motion.div
+            {...({
+              initial: { opacity: 0, y: 20 },
+              whileInView: { opacity: 1, y: 0 },
+              transition: { delay: 0.4 },
+              viewport: { once: true },
+              className: 'bg-gray-800/50 p-6 rounded-lg',
+            } as HTMLMotionProps<'div'>)}
+          >
+            <h3 className='text-orange-400 font-semibold text-xl mb-4'>
+              Contact Info
+            </h3>
+            <ul className='space-y-3 text-gray-300'>
+              <li className='flex items-center gap-3'>
+                <span className='text-gray-400 min-w-[120px] text-base'>
+                  Phone:
+                </span>
+                <a
+                  href='tel:+251989130478'
+                  className='text-base font-medium hover:text-orange-400 transition-colors'
+                >
+                  +251 98 913 0478
+                </a>
+              </li>
+              <li className='flex items-center gap-3'>
+                <span className='text-gray-400 min-w-[120px] text-base'>
+                  Email:
+                </span>
                 <a
                   href='mailto:muprog4@gmail.com'
-                  className='underline hover:text-orange-400'
+                  className='text-base font-medium hover:text-orange-400 transition-colors'
                 >
                   muprog4@gmail.com
                 </a>
-              </span>
-            </li>
-            <li className='font-semibold text-white'>
-              <span className='text-slate-400'>Address : </span>
-              <span>Addis Ababa, Ethiopia</span>
-            </li>
-          </ul>
+              </li>
+              <li className='flex items-center gap-3'>
+                <span className='text-gray-400 min-w-[120px] text-base'>
+                  Location:
+                </span>
+                <span className='text-base font-medium'>
+                  Addis Ababa, Ethiopia
+                </span>
+              </li>
+            </ul>
+          </motion.div>
+
+          <motion.div
+            {...({
+              initial: { opacity: 0, y: 20 },
+              whileInView: { opacity: 1, y: 0 },
+              transition: { delay: 0.6 },
+              viewport: { once: true },
+              className: 'bg-gray-800/50 p-6 rounded-lg sm:col-span-2',
+            } as HTMLMotionProps<'div'>)}
+          >
+            <h3 className='text-orange-400 font-semibold text-xl mb-4'>
+              Education
+            </h3>
+            <div className='text-gray-300'>
+              <p className='text-base font-medium'>
+                Bachelor of Computer Science
+              </p>
+              <p className='text-gray-400 text-base'>University of Gondar</p>
+            </div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
     </div>
   )
 }
