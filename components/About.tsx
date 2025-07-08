@@ -45,122 +45,93 @@ export default function About() {
             About <span className='text-orange-400'>Me</span>
           </h2>
           <p className='text-gray-400 text-lg mb-6'>
-            A passionate Full Stack developer with a strong foundation in web
-            development and a keen eye for creating beautiful, functional
-            applications.
+            <strong>Hi, I&rsquo;m Adoniyas!</strong> A passionate{' '}
+            <strong>Full Stack Developer</strong> with a strong foundation in
+            web development and a keen eye for creating beautiful, functional
+            applications. I graduated with a{' '}
+            <strong>
+              Bachelor of Computer Science from University of Gondar
+            </strong>
+            . I love building modern web experiences and am always eager to
+            learn new technologies and take on new challenges.
           </p>
         </div>
 
-        <div className='grid grid-cols-1 lg:grid-cols-2 gap-6'>
-          <motion.div
-            {...({
-              initial: { opacity: 0, y: 20 },
-              whileInView: { opacity: 1, y: 0 },
-              transition: { delay: 0.2 },
-              viewport: { once: true },
-              className:
-                'bg-gray-800/50 p-6 rounded-lg block sm:hidden lg:block',
-            } as HTMLMotionProps<'div'>)}
-          >
-            <h3 className='text-orange-400 font-semibold text-xl mb-4'>
-              Personal Info
-            </h3>
-            <ul className='space-y-3 text-gray-300'>
-              <li className='flex items-center gap-3'>
-                <span className='text-gray-400 min-w-[120px] text-base'>
-                  Age:
-                </span>
-                <span className='text-base font-medium'>24 Years</span>
-              </li>
-              <li className='flex items-center gap-3'>
-                <span className='text-gray-400 min-w-[120px] text-base'>
-                  Nationality:
-                </span>
-                <span className='text-base font-medium'>Ethiopian</span>
-              </li>
-              <li className='flex items-center gap-3'>
-                <span className='text-gray-400 min-w-[120px] text-base'>
-                  Languages:
-                </span>
-                <span className='text-base font-medium'>Amharic & English</span>
-              </li>
-              <li className='flex items-center gap-3'>
-                <span className='text-gray-400 min-w-[120px] text-base'>
-                  Freelance:
-                </span>
-                <span className='text-green-400 text-base font-medium'>
-                  Available
-                </span>
-              </li>
-            </ul>
-          </motion.div>
-
-          <motion.div
-            {...({
-              initial: { opacity: 0, y: 20 },
-              whileInView: { opacity: 1, y: 0 },
-              transition: { delay: 0.4 },
-              viewport: { once: true },
-              className: 'bg-gray-800/50 p-6 rounded-lg',
-            } as HTMLMotionProps<'div'>)}
-          >
-            <h3 className='text-orange-400 font-semibold text-xl mb-4'>
-              Contact Info
-            </h3>
-            <ul className='space-y-3 text-gray-300'>
-              <li className='flex items-center gap-3'>
-                <span className='text-gray-400 min-w-[120px] text-base'>
-                  Phone:
-                </span>
-                <a
-                  href='tel:+251989130478'
-                  className='text-base font-medium hover:text-orange-400 transition-colors'
-                >
-                  +251 98 913 0478
-                </a>
-              </li>
-              <li className='flex items-center gap-3'>
-                <span className='text-gray-400 min-w-[120px] text-base'>
-                  Email:
-                </span>
-                <a
-                  href='mailto:muprog4@gmail.com'
-                  className='text-base font-medium hover:text-orange-400 transition-colors'
-                >
-                  muprog4@gmail.com
-                </a>
-              </li>
-              <li className='flex items-center gap-3'>
-                <span className='text-gray-400 min-w-[120px] text-base'>
-                  Location:
-                </span>
-                <span className='text-base font-medium'>
-                  Addis Ababa, Ethiopia
-                </span>
-              </li>
-            </ul>
-          </motion.div>
-
-          <motion.div
-            {...({
-              initial: { opacity: 0, y: 20 },
-              whileInView: { opacity: 1, y: 0 },
-              transition: { delay: 0.6 },
-              viewport: { once: true },
-              className: 'bg-gray-800/50 p-6 rounded-lg sm:col-span-2',
-            } as HTMLMotionProps<'div'>)}
-          >
-            <h3 className='text-orange-400 font-semibold text-xl mb-4'>
-              Education
-            </h3>
-            <div className='text-gray-300'>
-              <p className='text-base font-medium'>
-                Bachelor of Computer Science
-              </p>
-              <p className='text-gray-400 text-base'>University of Gondar</p>
+        {/* Tech Stack Section for xs only */}
+        <div className='mb-8 flex flex-wrap gap-4 items-center sm:hidden'>
+          <h3 className='text-orange-400 font-semibold text-xl mb-4 w-full'>
+            Tech Stack
+          </h3>
+          <div className='flex flex-wrap gap-4 items-center'>
+            <div className='flex flex-col items-center'>
+              <img src='/react.svg' alt='React' className='w-7 h-7' />
+              <span className='text-xs text-gray-300 mt-1'>React</span>
             </div>
-          </motion.div>
+            <div className='flex flex-col items-center'>
+              <img src='/next.svg' alt='Next.js' className='w-7 h-7' />
+              <span className='text-xs text-gray-300 mt-1'>Next.js</span>
+            </div>
+            <div className='flex flex-col items-center'>
+              <img src='/css.svg' alt='CSS3' className='w-7 h-7' />
+              <span className='text-xs text-gray-300 mt-1'>CSS</span>
+            </div>
+            <div className='flex flex-col items-center'>
+              <img src='/tailwind.svg' alt='Tailwind CSS' className='w-7 h-7' />
+              <span className='text-xs text-gray-300 mt-1'>Tailwind CSS</span>
+            </div>
+            <div className='flex flex-col items-center'>
+              <img src='/node.svg' alt='Node.js' className='w-7 h-7' />
+              <span className='text-xs text-gray-300 mt-1'>Node.js</span>
+            </div>
+            <div className='flex flex-col items-center'>
+              <img src='/express.svg' alt='Express' className='w-7 h-7' />
+              <span className='text-xs text-gray-300 mt-1'>Express</span>
+            </div>
+            <div className='flex flex-col items-center'>
+              <img src='/mongodb.svg' alt='MongoDB' className='w-7 h-7' />
+              <span className='text-xs text-gray-300 mt-1'>MongoDB</span>
+            </div>
+          </div>
         </div>
+
+        {/* Contact Info Only (no location) */}
+        <motion.div
+          {...({
+            initial: { opacity: 0, y: 20 },
+            whileInView: { opacity: 1, y: 0 },
+            transition: { delay: 0.4 },
+            viewport: { once: true },
+            className: 'bg-gray-800/50 p-6 rounded-lg',
+          } as HTMLMotionProps<'div'>)}
+        >
+          <h3 className='text-orange-400 font-semibold text-xl mb-4'>
+            Contact Info
+          </h3>
+          <ul className='space-y-3 text-gray-300'>
+            <li className='flex items-center gap-3'>
+              <span className='text-gray-400 min-w-[120px] text-base'>
+                Phone:
+              </span>
+              <a
+                href='tel:+251989130478'
+                className='text-base font-medium hover:text-orange-400 transition-colors'
+              >
+                +251 98 913 0478
+              </a>
+            </li>
+            <li className='flex items-center gap-3'>
+              <span className='text-gray-400 min-w-[120px] text-base'>
+                Email:
+              </span>
+              <a
+                href='mailto:muprog4@gmail.com'
+                className='text-base font-medium hover:text-orange-400 transition-colors'
+              >
+                muprog4@gmail.com
+              </a>
+            </li>
+          </ul>
+        </motion.div>
       </motion.div>
     </div>
   )

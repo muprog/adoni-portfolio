@@ -142,19 +142,17 @@ export default function MainPortfolio() {
           <div className='bg-gray-800/30 rounded-xl sm:rounded-2xl   overflow-hidden'>
             <AnimatePresence initial={false} custom={direction}>
               <motion.div
-                {...({
-                  key: { currentIndex },
-                  custom: { direction },
-                  variants: { slideVariants },
-                  initial: 'enter',
-                  animate: 'center',
-                  exit: 'exit',
-                  transition: {
-                    x: { type: 'spring', stiffness: 300, damping: 30 },
-                    opacity: { duration: 0.2 },
-                  },
-                  className: 'flex flex-row gap-6 sm:gap-12',
-                } as HTMLMotionProps<'div'>)}
+                key={currentIndex}
+                custom={direction}
+                variants={slideVariants}
+                initial='enter'
+                animate='center'
+                exit='exit'
+                transition={{
+                  x: { type: 'spring', stiffness: 300, damping: 30 },
+                  opacity: { duration: 0.2 },
+                }}
+                style={{ display: 'flex', flexDirection: 'row', gap: '1.5rem' }}
               >
                 {/* Project Image - Left Side */}
                 <motion.div
@@ -247,27 +245,48 @@ export default function MainPortfolio() {
                         <span className='text-orange-400 font-semibold text-base sm:text-lg block mb-2 sm:mb-3'>
                           Technologies:
                         </span>
-                        <div className='flex flex-wrap gap-2 sm:gap-3'>
-                          {portfolios[currentIndex].technologies.map(
-                            (tech, index) => (
-                              <motion.span
-                                key={index}
-                                {...({
-                                  initial: { opacity: 0, scale: 0.8 },
-                                  whileInView: { opacity: 1, scale: 1 },
-                                  transition: {
-                                    duration: 0.3,
-                                    delay: 0.1 * index,
-                                  },
-                                  viewport: { once: true },
-                                  className:
-                                    'px-3 sm:px-4 py-1.5 sm:py-2 bg-gray-800/50 backdrop-blur-sm text-gray-300 rounded-full text-sm sm:text-base border border-gray-700 hover:border-orange-500/50 transition-colors duration-300',
-                                } as HTMLMotionProps<'div'>)}
-                              >
-                                {tech}
-                              </motion.span>
-                            )
-                          )}
+                        <div className='flex items-center gap-2 sm:gap-3 mt-4'>
+                          {portfolios[currentIndex].technologies &&
+                            portfolios[currentIndex].technologies.map(
+                              (tech) => {
+                                let icon = '/file.svg'
+                                if (tech === 'React' || tech === 'React.js')
+                                  icon = '/react.svg'
+                                else if (tech === 'Next.js') icon = '/next.svg'
+                                else if (tech === 'Tailwind CSS')
+                                  icon = '/tailwind.svg'
+                                else if (
+                                  tech === 'Node js' ||
+                                  tech === 'Node.js'
+                                )
+                                  icon = '/node.svg'
+                                else if (
+                                  tech === 'Express js' ||
+                                  tech === 'Express'
+                                )
+                                  icon = '/express.svg'
+                                else if (
+                                  tech === 'MongoDB' ||
+                                  tech === 'Mongoose'
+                                )
+                                  icon = '/mongodb.svg'
+                                else if (tech === 'CSS3' || tech === 'CSS')
+                                  icon = '/css.svg'
+                                else if (tech === 'JavaScript')
+                                  icon = '/javascript.svg'
+                                else if (tech === 'HTML5' || tech === 'HTML')
+                                  icon = '/html.svg'
+                                return (
+                                  <img
+                                    key={tech}
+                                    src={icon}
+                                    alt={tech}
+                                    className='w-8 h-8 rounded bg-gray-900 p-1'
+                                    title={tech}
+                                  />
+                                )
+                              }
+                            )}
                         </div>
                       </div>
                     </motion.div>

@@ -26,35 +26,17 @@ import { motion } from 'framer-motion'
 import type { HTMLMotionProps } from 'framer-motion'
 
 const skills = [
-  {
-    category: 'Frontend Development',
-    items: [
-      { name: 'HTML5', level: 95 },
-      { name: 'CSS3', level: 92 },
-      { name: 'JavaScript', level: 90 },
-      { name: 'React.js', level: 92 },
-      { name: 'Next.js', level: 90 },
-      { name: 'Tailwind CSS', level: 95 },
-    ],
-  },
-  {
-    category: 'Backend Development',
-    items: [
-      { name: 'Node.js', level: 80 },
-      { name: 'Express.js', level: 75 },
-      { name: 'MongoDB', level: 70 },
-      { name: 'REST APIs', level: 85 },
-    ],
-  },
-  {
-    category: 'Tools & Others',
-    items: [
-      { name: 'Git', level: 85 },
-      { name: 'VS Code', level: 90 },
-      { name: 'Responsive Design', level: 88 },
-      { name: 'UI/UX', level: 75 },
-    ],
-  },
+  { name: 'HTML5', icon: '/html.svg' },
+  { name: 'CSS', icon: '/css.svg' },
+  { name: 'JavaScript', icon: '/javascript.svg' },
+  { name: 'React.js', icon: '/react.svg' },
+  { name: 'Next.js', icon: '/next1.svg' },
+  { name: 'Tailwind CSS', icon: '/tailwind.svg' },
+  { name: 'Node.js', icon: '/node.svg' },
+  { name: 'Express.js', icon: '/express.svg' },
+  { name: 'MongoDB', icon: '/mongodb.svg' },
+  { name: 'Git', icon: '/git.svg' },
+  { name: 'VS Code', icon: '/visual_studio.svg' },
 ]
 
 export default function Skill() {
@@ -69,66 +51,134 @@ export default function Skill() {
           whileInView: { opacity: 1, y: 0 },
           transition: { duration: 0.8 },
           viewport: { once: true },
-          className: 'max-w-6xl mx-auto',
+          className: 'max-w-6xl mx-auto relative',
         } as HTMLMotionProps<'div'>)}
       >
         {/* Section Header */}
-        <div className='text-center mb-16'>
-          <h2 className='text-4xl sm:text-5xl font-bold text-white mb-4'>
+        <div className='text-center mb-10'>
+          <h2 className='text-4xl sm:text-5xl font-extrabold text-white mb-2 tracking-tight font-sans drop-shadow-lg'>
             My <span className='text-orange-400'>Skills</span>
           </h2>
-          <p className='text-gray-400 text-lg max-w-2xl mx-auto'>
+          <p className='text-lg text-cyan-100 font-medium mb-2 tracking-wide'>
+            <span className='text-orange-300 font-bold'>What I Use</span>
+          </p>
+          <p className='text-gray-100 text-lg max-w-2xl mx-auto font-light'>
             Here are the technologies and tools I work with to bring ideas to
             life
           </p>
         </div>
-
         {/* Skills Grid */}
-        <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
-          {skills.map((category, categoryIndex) => (
+        <div className='grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 gap-8 sm:gap-10 md:gap-14 px-2 sm:px-0'>
+          {skills.map((skill, i) => (
             <motion.div
-              key={category.category}
-              {...({
-                initial: { opacity: 0, y: 20 },
-                whileInView: { opacity: 1, y: 0 },
-                transition: { duration: 0.5, delay: categoryIndex * 0.2 },
-                viewport: { once: true },
-                className: 'bg-gray-800/50 rounded-xl p-6 backdrop-blur-sm',
-              } as HTMLMotionProps<'div'>)}
+              key={skill.name}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: i * 0.07 }}
+              viewport={{ once: true }}
+              whileHover={{
+                scale: 1.12,
+                rotate: 2,
+                boxShadow:
+                  '0 0 32px 8px #26d0ce55, 0 8px 32px 0 rgba(31, 38, 135, 0.37)',
+                borderColor: '#26d0ce',
+                background: 'rgba(255,255,255,0.18)',
+              }}
+              style={{
+                width: '8rem',
+                height: '8rem',
+                background: 'rgba(255,255,255,0.13)',
+                backdropFilter: 'blur(18px)',
+                borderRadius: '1.5rem',
+                boxShadow: '0 4px 32px 0 rgba(31,38,135,0.18)',
+                border: '2px solid rgba(255,255,255,0.18)',
+                transition: 'all 0.4s cubic-bezier(.4,2,.6,1)',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center',
+                position: 'relative',
+                overflow: 'hidden',
+                // For sm and md screens, use 5rem
+                ...(typeof window !== 'undefined' &&
+                window.innerWidth >= 640 &&
+                window.innerWidth < 1024
+                  ? { width: '5rem', height: '5rem' }
+                  : {}),
+              }}
             >
-              <h3 className='text-xl font-semibold text-orange-400 mb-6'>
-                {category.category}
-              </h3>
-              <div className='space-y-4'>
-                {category.items.map((skill, skillIndex) => (
-                  <motion.div
-                    key={skill.name}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: skillIndex * 0.1 }}
-                    viewport={{ once: true }}
-                  >
-                    <div className='flex justify-between mb-2'>
-                      <span className='text-gray-300'>{skill.name}</span>
-                      <span className='text-gray-400'>{skill.level}%</span>
-                    </div>
-                    <div className='h-2 bg-gray-700 rounded-full overflow-hidden'>
-                      <motion.div
-                        {...{
-                          initial: { width: 0 },
-                          whileInView: { width: `${skill.level}%` },
-                          transition: { duration: 1, delay: 0.5 },
-                          viewport: { once: true },
-                          className: 'h-full bg-orange-400 rounded-full',
-                        }}
-                      />
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
+              <motion.div
+                animate={{ y: [0, -8, 0, 8, 0] }}
+                transition={{
+                  duration: 3.5,
+                  repeat: Infinity,
+                  ease: 'easeInOut',
+                  delay: i * 0.1,
+                }}
+              >
+                <img
+                  src={skill.icon}
+                  alt={skill.name}
+                  className='mb-3 drop-shadow-xl'
+                  style={{
+                    width:
+                      typeof window !== 'undefined' &&
+                      window.innerWidth >= 640 &&
+                      window.innerWidth < 1024
+                        ? '2.5rem'
+                        : '5rem',
+                    height:
+                      typeof window !== 'undefined' &&
+                      window.innerWidth >= 640 &&
+                      window.innerWidth < 1024
+                        ? '2.5rem'
+                        : '5rem',
+                    filter: 'drop-shadow(0 0 12px #26d0ce88)',
+                  }}
+                />
+              </motion.div>
+              <span className='text-cyan-100 text-base font-semibold tracking-wide font-sans mt-1 drop-shadow-md'>
+                {skill.name}
+              </span>
+              <div className='absolute inset-0 pointer-events-none rounded-2xl border border-white/10' />
             </motion.div>
           ))}
         </div>
+        <style jsx>{`
+          @media (max-width: 639px) {
+            .skill-card {
+              width: 8rem !important;
+              height: 8rem !important;
+            }
+          }
+          @media (min-width: 640px) and (max-width: 1023px) {
+            .skill-card {
+              width: 5rem !important;
+              height: 5rem !important;
+            }
+          }
+          @media (min-width: 1024px) {
+            .skill-card {
+              width: 8rem !important;
+              height: 8rem !important;
+            }
+          }
+          .animate-gradient {
+            background-size: 400% 400%;
+            animation: gradientBG 16s ease infinite;
+          }
+          @keyframes gradientBG {
+            0% {
+              background-position: 0% 50%;
+            }
+            50% {
+              background-position: 100% 50%;
+            }
+            100% {
+              background-position: 0% 50%;
+            }
+          }
+        `}</style>
       </motion.div>
     </div>
   )

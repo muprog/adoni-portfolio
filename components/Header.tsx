@@ -13,8 +13,8 @@ import type { HTMLMotionProps } from 'framer-motion'
 const navItems = [
   { id: 'home', label: 'Home' },
   { id: 'about', label: 'About' },
-  { id: 'skill', label: 'Skills' },
   { id: 'portfolio', label: 'Projects' },
+  { id: 'skill', label: 'Skills' },
   { id: 'contact', label: 'Contact' },
 ]
 

@@ -20,12 +20,6 @@ const contactInfo = [
     link: 'mailto:muprog4@gmail.com',
   },
   {
-    icon: '/image/location.jpeg',
-    title: 'Location',
-    content: 'Addis Ababa, Ethiopia',
-    link: 'https://maps.google.com/?q=Addis+Ababa,Ethiopia',
-  },
-  {
     icon: '/image/github.jpg',
     title: 'GitHub',
     content: 'Muprog',

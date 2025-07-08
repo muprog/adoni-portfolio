@@ -18,10 +18,10 @@ export default function Page() {
           <About />
         </div>
         <div className='page-div'>
-          <Skill />
+          <MainPortfolio />
         </div>
         <div className='page-div'>
-          <MainPortfolio />
+          <Skill />
         </div>
         <div className='page-div'>
           <Contact />
