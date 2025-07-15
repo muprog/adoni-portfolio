@@ -23,30 +23,78 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
 
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const scrollPosition = window.scrollY
+  //     setIsScrolled(scrollPosition > 50)
+
+  //     // Update active section based on scroll position
+  //     const sections = navItems.map(({ id }) => {
+  //       const element = document.getElementById(id)
+  //       if (element) {
+  //         const rect = element.getBoundingClientRect()
+  //         return { id, top: rect.top }
+  //       }
+  //       return { id, top: Infinity }
+  //     })
+
+  //     const currentSection = sections.reduce((prev, curr) =>
+  //       Math.abs(curr.top) < Math.abs(prev.top) ? curr : prev
+  //     )
+
+  //     setActiveSection(currentSection.id)
+  //   }
+
+  //   window.addEventListener('scroll', handleScroll)
+  //   return () => window.removeEventListener('scroll', handleScroll)
+  // }, [])
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY
-      setIsScrolled(scrollPosition > 50)
+      setIsScrolled(window.scrollY > 50)
 
-      // Update active section based on scroll position
-      const sections = navItems.map(({ id }) => {
-        const element = document.getElementById(id)
-        if (element) {
+      const visibleSections = navItems
+        .map(({ id }) => {
+          const element = document.getElementById(id)
+          if (!element) return null
+
           const rect = element.getBoundingClientRect()
-          return { id, top: rect.top }
-        }
-        return { id, top: Infinity }
-      })
+          const height = rect.height
+          const visibleHeight =
+            Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0)
+          const visibilityRatio = visibleHeight / height
 
-      const currentSection = sections.reduce((prev, curr) =>
-        Math.abs(curr.top) < Math.abs(prev.top) ? curr : prev
+          return {
+            id,
+            visibilityRatio: visibilityRatio > 0 ? visibilityRatio : 0,
+          }
+        })
+        .filter(Boolean) as { id: string; visibilityRatio: number }[]
+
+      const mostVisible = visibleSections.reduce(
+        (prev, curr) =>
+          curr.visibilityRatio > prev.visibilityRatio ? curr : prev,
+        { id: '', visibilityRatio: 0 }
       )
 
-      setActiveSection(currentSection.id)
+      if (mostVisible.id) {
+        setActiveSection(mostVisible.id)
+      }
+    }
+
+    const handleResize = () => {
+      handleScroll()
     }
 
     window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
+    window.addEventListener('resize', handleResize)
+
+    // Call once on mount to initialize state
+    handleScroll()
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('resize', handleResize)
+    }
   }, [])
 
   const handleNavClick = (sectionId: string) => {

@@ -59,13 +59,6 @@ export default function Skill() {
           <h2 className='text-4xl sm:text-5xl font-extrabold text-white mb-2 tracking-tight font-sans drop-shadow-lg'>
             My <span className='text-blue-400'>Skills</span>
           </h2>
-          <p className='text-lg text-cyan-100 font-medium mb-2 tracking-wide'>
-            <span className='text-blue-300 font-bold'>What I Use</span>
-          </p>
-          <p className='text-gray-100 text-lg max-w-2xl mx-auto font-light'>
-            Here are the technologies and tools I work with to bring ideas to
-            life
-          </p>
         </div>
         {/* Skills Grid */}
         <div className='grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 gap-8 sm:gap-10 md:gap-14 px-2 sm:px-0'>

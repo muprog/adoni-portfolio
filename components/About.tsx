@@ -108,8 +108,8 @@ export default function About() {
             Contact Info
           </h3>
           <ul className='space-y-3 text-gray-300'>
-            <li className='flex items-center gap-3'>
-              <span className='text-gray-400 min-w-[120px] text-base'>
+            <li className='flex  gap-3'>
+              <span className='text-gray-400 min-w-[60px] text-base'>
                 Phone:
               </span>
               <a
@@ -119,8 +119,8 @@ export default function About() {
                 +251 98 913 0478
               </a>
             </li>
-            <li className='flex items-center gap-3'>
-              <span className='text-gray-400 min-w-[120px] text-base'>
+            <li className='w-full flex gap-3'>
+              <span className='text-gray-400 min-w-[60px] text-base'>
                 Email:
               </span>
               <a

@@ -99,7 +99,7 @@ export default function MainPortfolio() {
 
         <div className='relative'>
           {/* Navigation Buttons - Left and Right */}
-          <div className='absolute top-1/2 -translate-y-1/2 left-0 right-0 flex justify-between z-10 px-2 sm:px-4'>
+          <div className='absolute bottom-[-100] -translate-y-1/2 left-0 right-0 flex justify-center gap-5 z-10 px-2 sm:px-4'>
             <button
               onClick={prevProject}
               className='p-2 sm:p-3 bg-blue-500/0 hover:bg-blue-600/50 rounded-full transition-colors duration-300 border border-blue-600 border-opacity-30 hover:border-opacity-100'
@@ -352,9 +352,9 @@ export default function MainPortfolio() {
           </div>
 
           {/* Project Counter */}
-          <div className='text-center text-gray-400 text-sm sm:text-base mb-6 sm:mb-8'>
+          {/* <div className='text-center text-gray-400 text-sm sm:text-base mb-6 sm:mb-8'>
             {currentIndex + 1} / {portfolios.length}
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
