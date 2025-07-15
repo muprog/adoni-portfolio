@@ -7,22 +7,28 @@ import type { HTMLMotionProps } from 'framer-motion'
 
 const contactInfo = [
   {
-    icon: '/image/contact.png',
+    icon: '/image/phone.webp',
     title: 'Phone',
     content: '+251 98 913 0478',
     link: 'tel:+251989130478',
   },
   {
-    icon: '/image/mail.png',
+    icon: '/image/gmail.png',
     title: 'Email',
     content: 'muprog4@gmail.com',
     link: 'mailto:muprog4@gmail.com',
   },
   {
-    icon: '/image/github.jpg',
+    icon: '/image/github.png',
     title: 'GitHub',
     content: 'Muprog',
     link: 'https://github.com/muprog/',
+  },
+  {
+    icon: '/image/linkedin.png',
+    title: 'LinkedIn',
+    content: 'LinkedIn',
+    link: 'https://www.linkedin.com/in/adoniyas-seid-b93abb335?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
   },
 ]
 
@@ -66,7 +72,7 @@ export default function Contact() {
                 <Link href={info.link} target='_blank' className='block h-full'>
                   <div className='bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 h-full transform transition-all duration-300 hover:scale-105 hover:bg-gray-800/70 group'>
                     <div className='relative w-12 h-12 mx-auto mb-4'>
-                      <div className='absolute inset-0 bg-orange-400 rounded-full opacity-20 group-hover:opacity-30 transition-opacity duration-300' />
+                      <div className='absolute inset-0 bg-blue-400/50 rounded-full opacity-20 group-hover:opacity-30 transition-opacity duration-300' />
                       <Image
                         src={info.icon}
                         alt={info.title}
