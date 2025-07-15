@@ -57,10 +57,10 @@ export default function Skill() {
         {/* Section Header */}
         <div className='text-center mb-10'>
           <h2 className='text-4xl sm:text-5xl font-extrabold text-white mb-2 tracking-tight font-sans drop-shadow-lg'>
-            My <span className='text-orange-400'>Skills</span>
+            My <span className='text-blue-400'>Skills</span>
           </h2>
           <p className='text-lg text-cyan-100 font-medium mb-2 tracking-wide'>
-            <span className='text-orange-300 font-bold'>What I Use</span>
+            <span className='text-blue-300 font-bold'>What I Use</span>
           </p>
           <p className='text-gray-100 text-lg max-w-2xl mx-auto font-light'>
             Here are the technologies and tools I work with to bring ideas to

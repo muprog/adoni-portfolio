@@ -52,7 +52,7 @@ export default function Contact() {
           {/* Section Header */}
           <div className='text-center mb-16'>
             <h2 className='text-4xl sm:text-5xl font-bold text-white mb-4'>
-              Get In <span className='text-orange-400'>Touch</span>
+              Get In <span className='text-blue-400'>Touch</span>
             </h2>
             <p className='text-gray-400 text-lg max-w-2xl mx-auto'>
               Feel free to reach out to me for any questions or opportunities
@@ -83,7 +83,7 @@ export default function Contact() {
                     <h3 className='text-xl font-semibold text-white text-center mb-2'>
                       {info.title}
                     </h3>
-                    <p className='text-gray-400 text-center group-hover:text-orange-400 transition-colors duration-300'>
+                    <p className='text-gray-400 text-center group-hover:text-blue-400 transition-colors duration-300'>
                       {info.content}
                     </p>
                   </div>

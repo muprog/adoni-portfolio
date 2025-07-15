@@ -36,7 +36,7 @@ export default function Home() {
             }}
           >
             <h1 className='text-4xl sm:text-6xl font-bold text-white mb-4'>
-              Hello<span className='text-orange-400'>.</span>
+              Hello<span className='text-blue-400'>.</span>
             </h1>
             <h2 className='text-2xl sm:text-4xl font-semibold text-gray-300 mb-6'>
               I&apos;m Adoniyas

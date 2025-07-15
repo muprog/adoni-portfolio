@@ -42,7 +42,7 @@ export default function About() {
       >
         <div className='mb-8'>
           <h2 className='text-4xl sm:text-5xl font-bold text-white mb-4'>
-            About <span className='text-orange-400'>Me</span>
+            About <span className='text-blue-400'>Me</span>
           </h2>
           <p className='text-gray-400 text-lg mb-6'>
             <strong>Hi, I&rsquo;m Adoniyas!</strong> A passionate{' '}
@@ -59,7 +59,7 @@ export default function About() {
 
         {/* Tech Stack Section for xs only */}
         <div className='mb-8 flex flex-wrap gap-4 items-center sm:hidden'>
-          <h3 className='text-orange-400 font-semibold text-xl mb-4 w-full'>
+          <h3 className='text-blue-400 font-semibold text-xl mb-4 w-full'>
             Tech Stack
           </h3>
           <div className='flex flex-wrap gap-4 items-center'>
@@ -104,7 +104,7 @@ export default function About() {
             className: 'bg-gray-800/50 p-6 rounded-lg',
           } as HTMLMotionProps<'div'>)}
         >
-          <h3 className='text-orange-400 font-semibold text-xl mb-4'>
+          <h3 className='text-blue-400 font-semibold text-xl mb-4'>
             Contact Info
           </h3>
           <ul className='space-y-3 text-gray-300'>
@@ -114,7 +114,7 @@ export default function About() {
               </span>
               <a
                 href='tel:+251989130478'
-                className='text-base font-medium hover:text-orange-400 transition-colors'
+                className='text-base font-medium hover:text-blue-400 transition-colors'
               >
                 +251 98 913 0478
               </a>
@@ -125,7 +125,7 @@ export default function About() {
               </span>
               <a
                 href='mailto:muprog4@gmail.com'
-                className='text-base font-medium hover:text-orange-400 transition-colors'
+                className='text-base font-medium hover:text-blue-400 transition-colors'
               >
                 muprog4@gmail.com
               </a>

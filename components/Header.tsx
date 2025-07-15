@@ -70,7 +70,7 @@ export default function Header() {
             {...({
               initial: { opacity: 0, x: -20 },
               animate: { opacity: 1, x: 0 },
-              className: 'text-xl font-bold text-orange-400',
+              className: 'text-xl font-bold text-blue-400',
             } as HTMLMotionProps<'div'>)}
           >
             Adoniyas
@@ -88,7 +88,7 @@ export default function Header() {
                   onClick={() => handleNavClick(item.id)}
                   className={`relative px-3 py-2 text-sm font-medium transition-colors duration-300 ${
                     activeSection === item.id
-                      ? 'text-orange-400'
+                      ? 'text-blue-400'
                       : 'text-gray-300 hover:text-white'
                   }`}
                 >
@@ -98,7 +98,7 @@ export default function Header() {
                       {...({
                         layoutId: 'activeSection',
                         className:
-                          'absolute bottom-0 left-0 right-0 h-0.5 bg-orange-400',
+                          'absolute bottom-0 left-0 right-0 h-0.5 bg-blue-400',
                       } as HTMLMotionProps<'div'>)}
                     />
                   )}
@@ -116,7 +116,7 @@ export default function Header() {
             {...({
               initial: { opacity: 0, x: -20 },
               animate: { opacity: 1, x: 0 },
-              className: 'text-xl font-bold text-orange-400',
+              className: 'text-xl font-bold text-blue-400',
             } as HTMLMotionProps<'div'>)}
           >
             Adoniyas
@@ -200,7 +200,7 @@ export default function Header() {
                           onClick={() => handleNavClick(item.id)}
                           className={`w-full px-4 py-2 text-left rounded-lg transition-colors duration-300 ${
                             activeSection === item.id
-                              ? 'bg-orange-400 text-white'
+                              ? 'bg-blue-400 text-white'
                               : 'text-gray-300 hover:bg-gray-800'
                           }`}
                         >

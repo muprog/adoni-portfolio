@@ -93,7 +93,7 @@ export default function MainPortfolio() {
       <div className='max-w-6xl mx-auto'>
         <div className='text-center mb-4 sm:mb-4'>
           <h2 className='text-3xl sm:text-4xl md:text-5xl font-bold text-white'>
-            My <span className='text-orange-400'>Projects</span>
+            My <span className='text-blue-400'>Projects</span>
           </h2>
         </div>
 
@@ -210,7 +210,7 @@ export default function MainPortfolio() {
                       transition={{ duration: 0.5, delay: 0.4 }}
                       viewport={{ once: true }}
                     >
-                      <h3 className='text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 sm:mb-4 bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent'>
+                      <h3 className='text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 sm:mb-4 bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent'>
                         {portfolios[currentIndex].name}
                       </h3>
                       <p className='text-gray-400 text-base sm:text-lg leading-relaxed'>
@@ -228,7 +228,7 @@ export default function MainPortfolio() {
                       } as HTMLMotionProps<'div'>)}
                     >
                       <div className='flex items-center gap-2 sm:gap-3'>
-                        <span className='text-orange-400 font-semibold text-base sm:text-lg min-w-[120px] sm:min-w-[140px]'>
+                        <span className='text-blue-400 font-semibold text-base sm:text-lg min-w-[120px] sm:min-w-[140px]'>
                           Project Type:
                         </span>
                         <span className='text-gray-300 text-base sm:text-lg'>
@@ -236,7 +236,7 @@ export default function MainPortfolio() {
                         </span>
                       </div>
                       <div className='flex items-center gap-2 sm:gap-3'>
-                        <span className='text-orange-400 font-semibold text-base sm:text-lg min-w-[120px] sm:min-w-[140px]'>
+                        <span className='text-blue-400 font-semibold text-base sm:text-lg min-w-[120px] sm:min-w-[140px]'>
                           Framework:
                         </span>
                         <span className='text-gray-300 text-base sm:text-lg'>
@@ -244,7 +244,7 @@ export default function MainPortfolio() {
                         </span>
                       </div>
                       <div>
-                        <span className='text-orange-400 font-semibold text-base sm:text-lg block mb-2 sm:mb-3'>
+                        <span className='text-blue-400 font-semibold text-base sm:text-lg block mb-2 sm:mb-3'>
                           Technologies:
                         </span>
                         <div className='flex items-center gap-2 sm:gap-3 mt-4'>
@@ -283,7 +283,7 @@ export default function MainPortfolio() {
                                     key={tech}
                                     src={icon}
                                     alt={tech}
-                                    className='w-8 h-8 rounded bg-gray-900 p-1'
+                                    className='w-8 h-8 rounded bg-white p-1'
                                     title={tech}
                                   />
                                 )
@@ -308,7 +308,7 @@ export default function MainPortfolio() {
                     <Link
                       href={portfolios[currentIndex].live}
                       target='_blank'
-                      className='group px-6 sm:px-8 py-2.5 sm:py-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-full hover:from-orange-600 hover:to-orange-700 transition-all duration-300 text-base sm:text-lg font-medium flex items-center justify-center gap-2'
+                      className='group px-6 sm:px-8 py-2.5 sm:py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-full hover:from-blue-600 hover:to-blue-700 transition-all duration-300 text-base sm:text-lg font-medium flex items-center justify-center gap-2'
                     >
                       Live Demo
                       <svg
@@ -328,7 +328,7 @@ export default function MainPortfolio() {
                     <Link
                       href={portfolios[currentIndex].github}
                       target='_blank'
-                      className='group px-6 sm:px-8 py-2.5 sm:py-3 border-2 border-gray-700 text-gray-300 rounded-full hover:border-orange-500/50 hover:text-orange-400 transition-all duration-300 text-base sm:text-lg font-medium flex items-center justify-center gap-2'
+                      className='group px-6 sm:px-8 py-2.5 sm:py-3 border-2 border-gray-700 text-gray-300 rounded-full hover:border-blue-500/50 hover:text-blue-400 transition-all duration-300 text-base sm:text-lg font-medium flex items-center justify-center gap-2'
                     >
                       View Code
                       <svg
