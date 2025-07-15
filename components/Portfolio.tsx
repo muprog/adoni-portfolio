@@ -23,7 +23,7 @@ export default function Portfolio({
         whileInView: { opacity: 1, y: 0 },
         transition: { duration: 0.5 },
         viewport: { once: true },
-        className: 'flex flex-col lg:flex-row gap-12',
+        className: ' lg:flex-row gap-12',
       } as HTMLMotionProps<'div'>)}
     >
       <motion.div
@@ -33,7 +33,7 @@ export default function Portfolio({
           transition: { duration: 0.5, delay: 0.2 },
           viewport: { once: true },
           className:
-            'lg:w-1/2 relative h-[450px] rounded-2xl overflow-hidden group',
+            'lg:w-1/2 relative h-[450px] rounded-2xl overflow-hidden group ',
         } as HTMLMotionProps<'div'>)}
       >
         <Image
@@ -58,7 +58,6 @@ export default function Portfolio({
         </motion.div>
       </motion.div>
 
-      {/* Project Info - Right Side */}
       <motion.div
         {...({
           initial: { opacity: 0 },
@@ -129,7 +128,6 @@ export default function Portfolio({
           </motion.div>
         </div>
 
-        {/* Buttons - Bottom */}
         <motion.div
           {...({
             initial: { opacity: 0, y: 20 },

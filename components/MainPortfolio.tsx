@@ -8,18 +8,6 @@ import type { HTMLMotionProps } from 'framer-motion'
 
 const portfolios = [
   {
-    id: '0',
-    image: 'car_showcase.png',
-    name: 'Car Showcase',
-    description:
-      'A modern car showcase platform built with Next.js, featuring advanced filtering, search functionality, and a sleek user interface.',
-    project: 'E-commerce Platform',
-    framework: 'Next.js',
-    technologies: ['Next.js', 'Tailwind CSS', 'TypeScript', 'RapidAPI'],
-    live: 'https://car-showcase-git-master-mus-projects-b80e04f8.vercel.app/',
-    github: 'https://github.com/muprog/car_showcase',
-  },
-  {
     id: '1',
     image: 'next_amazon.png',
     name: 'Next Amazon',
@@ -30,6 +18,18 @@ const portfolios = [
     technologies: ['Next.js', 'Tailwind CSS'],
     live: 'https://next-amazon-ten.vercel.app/',
     github: 'https://github.com/muprog/next-amazon',
+  },
+  {
+    id: '0',
+    image: 'car_showcase.png',
+    name: 'Car Showcase',
+    description:
+      'A modern car showcase platform built with Next.js, featuring advanced filtering, search functionality, and a sleek user interface.',
+    project: 'Car Showcase',
+    framework: 'Next.js',
+    technologies: ['Next.js', 'Tailwind CSS', 'TypeScript', 'RapidAPI'],
+    live: 'https://car-showcase-git-master-mus-projects-b80e04f8.vercel.app/',
+    github: 'https://github.com/muprog/car_showcase',
   },
   {
     id: '2',
@@ -102,7 +102,7 @@ export default function MainPortfolio() {
           <div className='absolute top-1/2 -translate-y-1/2 left-0 right-0 flex justify-between z-10 px-2 sm:px-4'>
             <button
               onClick={prevProject}
-              className='p-2 sm:p-3 bg-orange-500/80 hover:bg-orange-600 rounded-full transition-colors duration-300 backdrop-blur-sm'
+              className='p-2 sm:p-3 bg-blue-500/0 hover:bg-blue-600/50 rounded-full transition-colors duration-300 border border-blue-600 border-opacity-30 hover:border-opacity-100'
             >
               <svg
                 className='w-6 h-6 sm:w-8 sm:h-8 text-white'
@@ -120,7 +120,7 @@ export default function MainPortfolio() {
             </button>
             <button
               onClick={nextProject}
-              className='p-2 sm:p-3 bg-orange-500/80 hover:bg-orange-600 rounded-full transition-colors duration-300 backdrop-blur-sm'
+              className='p-2 sm:p-3 bg-blue-500/0 hover:bg-blue-600/50 rounded-full transition-colors duration-300 border border-blue-600 border-opacity-30 hover:border-opacity-100'
             >
               <svg
                 className='w-6 h-6 sm:w-8 sm:h-8 text-white'
@@ -143,18 +143,20 @@ export default function MainPortfolio() {
             <AnimatePresence initial={false} custom={direction}>
               <motion.div
                 key={currentIndex}
-                custom={direction}
-                variants={slideVariants}
-                initial='enter'
-                animate='center'
-                exit='exit'
-                transition={{
-                  x: { type: 'spring', stiffness: 300, damping: 30 },
-                  opacity: { duration: 0.2 },
-                }}
-                style={{ display: 'flex', flexDirection: 'row', gap: '1.5rem' }}
+                {...({
+                  custom: direction,
+                  variants: slideVariants,
+                  initial: 'enter',
+                  animate: 'center',
+                  exit: 'exit',
+                  transition: {
+                    x: { type: 'spring', stiffness: 300, damping: 30 },
+                    opacity: { duration: 0.2 },
+                  },
+                  className: 'flex flex-col sm:flex-row gap-6',
+                } as HTMLMotionProps<'div'>)}
               >
-                {/* Project Image - Left Side */}
+                {/* Project Image - Top Side (mobile), Left Side (sm+) */}
                 <motion.div
                   {...({
                     initial: { opacity: 0, scale: 0.95 },
@@ -162,7 +164,7 @@ export default function MainPortfolio() {
                     transition: { duration: 0.5, delay: 0.2 },
                     viewport: { once: true },
                     className:
-                      'w-1/2 relative h-[250px] sm:h-[350px] md:h-[400px] rounded-xl sm:rounded-2xl overflow-hidden group',
+                      'w-full sm:w-1/2 relative h-[250px] sm:h-[350px] md:h-[400px] rounded-xl sm:rounded-2xl overflow-hidden group',
                   } as HTMLMotionProps<'div'>)}
                 >
                   <Image
@@ -173,14 +175,14 @@ export default function MainPortfolio() {
                   />
                   <div className='absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500' />
                   <motion.div
-                    {...{
+                    {...({
                       initial: { opacity: 0, y: 20 },
                       whileInView: { opacity: 1, y: 0 },
                       transition: { duration: 0.5, delay: 0.4 },
                       viewport: { once: true },
                       className:
                         'absolute bottom-0 left-0 right-0 p-4 sm:p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500',
-                    }}
+                    } as HTMLMotionProps<'div'>)}
                   >
                     <h3 className='text-xl sm:text-2xl font-bold text-white mb-1 sm:mb-2'>
                       {portfolios[currentIndex].name}
@@ -191,14 +193,14 @@ export default function MainPortfolio() {
                   </motion.div>
                 </motion.div>
 
-                {/* Project Info - Right Side */}
+                {/* Project Info - Bottom Side (mobile), Right Side (sm+) */}
                 <motion.div
                   {...({
                     initial: { opacity: 0 },
                     whileInView: { opacity: 1 },
                     transition: { duration: 0.5, delay: 0.3 },
                     viewport: { once: true },
-                    className: 'w-1/2 flex flex-col',
+                    className: 'w-full sm:w-1/2 flex flex-col',
                   } as HTMLMotionProps<'div'>)}
                 >
                   <div className='space-y-6 sm:space-y-8'>
