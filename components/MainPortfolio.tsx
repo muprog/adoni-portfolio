@@ -184,10 +184,10 @@ export default function MainPortfolio() {
                         'absolute bottom-0 left-0 right-0 p-4 sm:p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500',
                     } as HTMLMotionProps<'div'>)}
                   >
-                    <h3 className='text-xl sm:text-2xl font-bold text-white mb-1 sm:mb-2'>
+                    <h3 className='text-xl sm:text-2xl font-bold text-blue-500 mb-1 sm:mb-2'>
                       {portfolios[currentIndex].name}
                     </h3>
-                    <p className='text-gray-300 text-sm sm:text-base'>
+                    <p className='text-blue-500 text-sm sm:text-base'>
                       {portfolios[currentIndex].project}
                     </p>
                   </motion.div>

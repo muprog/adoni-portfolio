@@ -40,7 +40,7 @@ export default function About() {
           className: 'w-full sm:w-1/2 flex flex-col justify-center p-6',
         } as HTMLMotionProps<'div'>)}
       >
-        <div className='mb-8'>
+        <div className=''>
           <h2 className='text-4xl sm:text-5xl font-bold text-white mb-4'>
             About <span className='text-blue-400'>Me</span>
           </h2>
@@ -101,7 +101,7 @@ export default function About() {
             whileInView: { opacity: 1, y: 0 },
             transition: { delay: 0.4 },
             viewport: { once: true },
-            className: 'bg-gray-800/50 p-6 rounded-lg',
+            className: 'bg-gray-800/50 py-1 p-2 rounded-lg',
           } as HTMLMotionProps<'div'>)}
         >
           <h3 className='text-blue-400 font-semibold text-xl mb-4'>
