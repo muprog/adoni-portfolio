@@ -20,18 +20,6 @@ const portfolios = [
     github: 'https://github.com/muprog/next-amazon',
   },
   {
-    id: '0',
-    image: 'car_showcase.png',
-    name: 'Car Showcase',
-    description:
-      'A modern car showcase platform built with Next.js, featuring advanced filtering, search functionality, and a sleek user interface.',
-    project: 'Car Showcase',
-    framework: 'Next.js',
-    technologies: ['Next.js', 'Tailwind CSS', 'TypeScript', 'RapidAPI'],
-    live: 'https://car-showcase-git-master-mus-projects-b80e04f8.vercel.app/',
-    github: 'https://github.com/muprog/car_showcase',
-  },
-  {
     id: '2',
     image: 'event_scheduler.png',
     name: 'Event Scheduler',
@@ -47,6 +35,18 @@ const portfolios = [
     ],
     live: 'https://event-scheduler-henna.vercel.app/',
     github: 'https://github.com/muprog/event_scheduler',
+  },
+  {
+    id: '0',
+    image: 'car_showcase.png',
+    name: 'Car Showcase',
+    description:
+      'A modern car showcase platform built with Next.js, featuring advanced filtering, search functionality, and a sleek user interface.',
+    project: 'Car Showcase',
+    framework: 'Next.js',
+    technologies: ['Next.js', 'Tailwind CSS', 'TypeScript', 'RapidAPI'],
+    live: 'https://car-showcase-git-master-mus-projects-b80e04f8.vercel.app/',
+    github: 'https://github.com/muprog/car_showcase',
   },
 ]
 
