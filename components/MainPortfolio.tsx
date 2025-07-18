@@ -37,6 +37,17 @@ const portfolios = [
     github: 'https://github.com/muprog/event_scheduler',
   },
   {
+    id: '3',
+    image: 'ecommerce.png',
+    name: 'E-commerce',
+    description: 'E-commerce',
+    project: 'E-commerce',
+    framework: 'React.js Node.js Express.js Mongodb',
+    technologies: ['React.js', 'CSS', 'Node js', 'Express js', 'Mongoose'],
+    live: 'https://github.com/muprog/FINALPROJECT1',
+    github: 'https://github.com/muprog/FINALPROJECT1',
+  },
+  {
     id: '0',
     image: 'car_showcase.png',
     name: 'Car Showcase',
