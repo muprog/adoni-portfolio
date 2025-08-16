@@ -8,6 +8,24 @@ import type { HTMLMotionProps } from 'framer-motion'
 
 const portfolios = [
   {
+    id: '0',
+    image: 'music_addis.png',
+    name: 'music app',
+    description: 'A simple music app',
+    project: 'Music app',
+    framework: 'Next.js Redux js Node.js Express.js Mongodb',
+    technologies: [
+      'Next.js',
+      'Redux js',
+      'Tailwind CSS',
+      'Node js',
+      'Express js',
+      'Mongoose',
+    ],
+    live: 'https://music-addis-sigma.vercel.app/',
+    github: 'https://github.com/muprog/music_addis',
+  },
+  {
     id: '1',
     image: 'next_amazon.png',
     name: 'Next Amazon',
@@ -48,7 +66,7 @@ const portfolios = [
     github: 'https://github.com/muprog/FINALPROJECT1',
   },
   {
-    id: '0',
+    id: '4',
     image: 'car_showcase.png',
     name: 'Car Showcase',
     description:
@@ -289,6 +307,11 @@ export default function MainPortfolio() {
                                   icon = '/javascript.svg'
                                 else if (tech === 'HTML5' || tech === 'HTML')
                                   icon = '/html.svg'
+                                else if (
+                                  tech === 'Redux js' ||
+                                  tech === 'Redux'
+                                )
+                                  icon = '/redux.png'
                                 return (
                                   <img
                                     key={tech}
