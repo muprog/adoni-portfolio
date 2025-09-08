@@ -15,13 +15,13 @@ const contactInfo = [
   {
     icon: '/image/gmail.png',
     title: 'Email',
-    content: 'muprog4@gmail.com',
-    link: 'mailto:muprog4@gmail.com',
+    content: 'adoniyasseid722@gmail.com',
+    link: 'mailto:adoniyasseid722@gmail.com',
   },
   {
     icon: '/image/github.png',
     title: 'GitHub',
-    content: 'Muprog',
+    content: 'Adoniyas',
     link: 'https://github.com/muprog/',
   },
   {
