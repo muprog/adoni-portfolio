@@ -16,7 +16,7 @@ const contactInfo = [
     icon: '/image/gmail.png',
     title: 'Email',
     content: 'adoniyasseid722@gmail.com',
-    link: 'mailto:adoniyasseid722@gmail.com?subject=Contact%20From%20Portfolio&body=Hello%20Adoniyas,',
+    link: 'https://mail.google.com/mail/?view=cm&fs=1&to=adoniyasseid722@gmail.com',
   },
   {
     icon: '/image/github.png',
