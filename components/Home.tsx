@@ -11,7 +11,9 @@ export default function Home() {
     const timer = setTimeout(() => setIsAnimating(false), 1000)
     return () => clearTimeout(timer)
   }, [])
-
+  const handleHireMeClick = () => {
+    window.location.href = 'mailto:adoniyasseid722@gmail.com'
+  }
   if (!isMounted) {
     return null
   }
@@ -44,6 +46,14 @@ export default function Home() {
             <p className='text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto'>
               A passionate Full Stack Developer crafting modern web experiences
             </p>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <button
+                onClick={handleHireMeClick}
+                className='bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-8 rounded-full transition-colors duration-300 shadow-lg'
+              >
+                Hire Me
+              </button>
+            </motion.div>
           </motion.div>
         </div>
       </div>
