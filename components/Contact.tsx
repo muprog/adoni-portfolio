@@ -16,10 +16,7 @@ const contactInfo = [
     icon: '/image/gmail.png',
     title: 'Email',
     content: 'adoniyasseid722@gmail.com',
-    link:
-      typeof window !== 'undefined' && /gmail|google/.test(navigator.userAgent)
-        ? 'https://mail.google.com/mail/?view=cm&fs=1&to=adoniyasseid722@gmail.com'
-        : 'mailto:adoniyasseid722@gmail.com',
+    link: 'mailto:adoniyasseid722@gmail.com',
   },
   {
     icon: '/image/github.png',
